@@ -2,7 +2,7 @@ FROM golang:1.4.2
 MAINTAINER Siddhartha Basu <siddhartha-basu@northwestern.edu>
 
 RUN apt-get update \
-    && apt-get install -y build-essential \
+    && apt-get install -y build-essential pkg-config \
     && rm -fr /var/lib/apt/lists/*
 
 
