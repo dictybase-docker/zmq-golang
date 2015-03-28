@@ -1,6 +1,11 @@
 FROM golang:1.4.2
 MAINTAINER Siddhartha Basu <siddhartha-basu@northwestern.edu>
 
+RUN apt-get update \
+    && apt-get install -y build-install \
+    && rm -fr /var/lib/apt/lists/*
+
+
 ADD http://download.zeromq.org/zeromq-4.0.4.tar.gz /tmp/
 RUN cd /tmp && tar xvzf zeromq-4.0.4.tar.gz && \
     cd zeromq-4.0.4 && ./configure && \
